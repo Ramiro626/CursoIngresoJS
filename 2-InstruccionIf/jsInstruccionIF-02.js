@@ -4,7 +4,7 @@ function mostrar()
 		var edad;
 
 	//tomo la edad  
-		edad = txtIdEdad.value;
+		edad = document.getElementById("txtIdEdad").value;
 
 	//convertir a Integer
 		edad = parseInt(edad);
