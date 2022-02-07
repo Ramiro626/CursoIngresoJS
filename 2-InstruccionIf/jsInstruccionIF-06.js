@@ -22,7 +22,7 @@ function mostrar()
 	{
 		alert("usted es un adolescente");
 	}
-	else if(edad>17)
+	else
 	{
 		alert("usted es un adulto");
 	}
