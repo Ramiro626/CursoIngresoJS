@@ -1,7 +1,11 @@
+/*
+Ramiro Sanchez DIV E
+IF Ejercicio 5
+*/
 function mostrar()
 {
 	//declaro variables
-		var edad;
+		let edad;
 
 	//tomo la edad  
 		edad = document.getElementById("txtIdEdad").value;
@@ -10,7 +14,7 @@ function mostrar()
 		edad = parseInt(edad);
 
 	//display por alert con if
-	if(edad<13 || edad>18)
+	if(edad<13 || edad>17)
 	{
 		alert("usted NO es adolescente");
 	}

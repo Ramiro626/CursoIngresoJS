@@ -1,7 +1,11 @@
+/*
+Ramiro Sanchez DIV E
+IF Ejercicio 2
+*/
 function mostrar()
 {
 	//declaro variables
-		var edad;
+		let edad;
 
 	//tomo la edad  
 		edad = document.getElementById("txtIdEdad").value;
