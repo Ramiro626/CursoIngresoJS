@@ -14,21 +14,15 @@ function mostrar()
 		edad = parseInt(edad);
 
 	//display por alert con if
-
-	if(edad >= 18)
-
+	if(edad > 17)
 	{
-
 		alert("eres mayor de edad");
 	}
-
-	else if(edad < 18)
-		
+	else
 	{
-
 		alert("eres menor de edad");
-
 	}
+
 }//FIN DE LA FUNCIÓN
 
 //txtIdEdad

@@ -18,4 +18,5 @@ function mostrar()
 	{
 		alert("usted NO es adolescente");
 	}
+
 }//FIN DE LA FUNCIÓN

@@ -14,11 +14,9 @@ function mostrar()
 		edad = parseInt(edad);
 
 	//display por alert con if
-
-	if(edad >= 18)
+	if(edad > 17)
 	{
 		alert("eres mayor de edad");
-
 	}
 
 }//FIN DE LA FUNCIÓN

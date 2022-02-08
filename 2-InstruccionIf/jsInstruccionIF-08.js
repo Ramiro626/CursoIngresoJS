@@ -16,12 +16,11 @@ function mostrar()
 		edad = parseInt(edad);
 
 	//display por alert con if
-		if (edad>17 && civil == "Soltero") 
+	if (edad>17 && civil == "Soltero") 
 	{
 		alert("Es soltero y no es menor.");
 	}
 
-	
 }//FIN DE LA FUNCIÓN
 
 //txtIdEdad
