@@ -25,3 +25,5 @@ function mostrar()
 
 //txtIdEdad
 //estadoCivil
+//civil = civil.toLowerCase();
+//if (edad<18 && civil != "soltero") 

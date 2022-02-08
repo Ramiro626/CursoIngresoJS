@@ -1,3 +1,7 @@
+/*
+Ramiro Sanchez DIV E
+IF Ejercicio 10
+*/
 function mostrar()
 {
 	//declaro variable
