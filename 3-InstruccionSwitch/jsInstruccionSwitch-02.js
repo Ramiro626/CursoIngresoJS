@@ -11,10 +11,10 @@ ACLARAcIÓN: tomamos a Julio y Agosto como los meses de Invierno.
 function mostrar()
 {
 	//declaro variable
-	var mes
+		var mes;
 
 	//tomo dato
-	mes = document.getElementById("txtIdMes").value;
+		mes = document.getElementById("txtIdMes").value;
 
 	//defino casos para los meses
 	switch(mes)

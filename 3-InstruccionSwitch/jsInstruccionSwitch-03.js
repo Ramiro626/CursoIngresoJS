@@ -9,10 +9,10 @@ si NO es Febrero: "Este mes tiene 30 o más días"
 function mostrar()
 {
 	//declaro variable
-	var mes
+		var mes;
 
 	//tomo dato
-	mes = document.getElementById("txtIdMes").value;
+		mes = document.getElementById("txtIdMes").value;
 
 	//defino casos para los meses
 	switch(mes)

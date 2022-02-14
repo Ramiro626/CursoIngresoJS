@@ -8,13 +8,13 @@ si está entre las 7 y las 11 : "Es de mañana.".
 function mostrar()
 {
 	//declaro variable
-	let hora
+		let hora;
 
 	//tomo dato y paso a integer
-	hora = document.getElementById("txtIdHora").value;
-	hora = parseInt(hora);
+		hora = document.getElementById("txtIdHora").value;
+		hora = parseInt(hora);
 
-	//defino casos para los meses
+	//defino casos para las horas
 	switch(hora)
 	{
 		case 7:
