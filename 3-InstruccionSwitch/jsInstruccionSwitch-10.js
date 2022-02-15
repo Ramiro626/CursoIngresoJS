@@ -60,11 +60,7 @@ function mostrar()
 			}
 			break;
 		default:
-			switch(lugar)
-			{
-				default:
-					alert("Se viaja");
-			}
+			alert("Se viaja");
 	}
 
 }

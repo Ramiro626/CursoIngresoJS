@@ -10,7 +10,7 @@ D.	Si compra 3  lamparitas bajo consumo marca "ArgentinaLuz"  el descuento es de
 E.	Si el importe final con descuento suma más de $120  se debe sumar un 10% de ingresos brutos en informar del impuesto con el siguiente mensaje:
  ”Usted pago X de IIBB.”, siendo X el impuesto que se pagó. 
 
- */
+
 function CalcularPrecio () 
 {
  	//declaro variables
@@ -95,4 +95,178 @@ function CalcularPrecio ()
 //txtIdCantidad
 //Marca
 //txtIdprecioDescuento
+
+*/
+
+/*
+Ramiro Sanchez DIV E
+TP Ejercicio 4 IF/SWITCH
+
+
+function CalcularPrecio () 
+{
+ 	//declaro variables
+	    let lamparas;
+        let precio;
+        let descuento;
+        let impuesto;
+        var local;
+
+
+	//inicializo variables 
+		lamparas = document.getElementById("txtIdCantidad").value;
+		local = document.getElementById("Marca").value;
+
+	//convertir a Integer
+		lamparas = parseInt(lamparas);
+
+	//calculo descuento con if y switch
+        if (lamparas >= 6)
+        {
+            descuento = 0.5;
+        }
+        else 
+        {
+            switch(lamparas)
+            {
+                case 5:
+                    switch(local)
+                    {
+                        case 'ArgentinaLuz':
+                            descuento = 0.6;
+                            break;
+                        default:
+                            descuento = 0.7;
+                    }
+                    break;
+                case 4:
+                    switch(local)
+                    {
+                        case 'ArgentinaLuz':
+                        case 'FelipeLamparas':
+                            descuento = 0.75;
+                            break;
+                        default:
+                            descuento = 0.8;
+                    }
+                    break;
+                case 3:
+                    switch(local)
+                    {
+                        case 'ArgentinaLuz':
+                            descuento = 0.85;
+                            break;
+                        case 'FelipeLamparas':
+                            descuento = 0.9;
+                            break;
+                        default:
+                            descuento = 0.95;
+                    }
+                    break;
+                default:
+                    descuento = 1;
+            }
+        }
+        
+    //calculo precio, agrego ingreso bruto si necesario y display por document
+    precio = (lamparas * 35) * descuento;
+        
+    if(precio > 120)
+        {
+            impuesto = precio / 100 * 10;
+            precio = impuesto + precio;
+            document.getElementById("txtIdprecioDescuento").value = precio;
+            alert("IIBB Usted pago " + impuesto);
+        }
+    else
+        {
+            document.getElementById("txtIdprecioDescuento").value = precio;
+        }
+}
+
+*/
+
+/*
+Ramiro Sanchez DIV E
+TP Ejercicio 4 SWITCH/SWITCH
+*/
+
+function CalcularPrecio () 
+{
+ 	//declaro variables
+	    let lamparas;
+        let precio;
+        let descuento;
+        let impuesto;
+        var local;
+
+
+	//inicializo variables 
+		lamparas = document.getElementById("txtIdCantidad").value;
+		local = document.getElementById("Marca").value;
+
+	//convertir a Integer
+		lamparas = parseInt(lamparas);
+
+	//calculo descuento con switch
+        switch(lamparas)
+        {
+            case 5:
+                switch(local)
+                {
+                    case 'ArgentinaLuz':
+                        descuento = 0.6;
+                        break;
+                    default:
+                        descuento = 0.7;
+                }
+                break;
+            case 4:
+                switch(local)
+                {
+                    case 'ArgentinaLuz':
+                    case 'FelipeLamparas':
+                        descuento = 0.75;
+                        break;
+                    default:
+                        descuento = 0.8;
+                }
+                break;
+            case 3:
+                switch(local)
+                {
+                    case 'ArgentinaLuz':
+                        descuento = 0.85;
+                        break;
+                    case 'FelipeLamparas':
+                        descuento = 0.9;
+                        break;
+                    default:
+                        descuento = 0.95;
+                }
+                break;
+            case 2:
+            case 1:
+                descuento = 1;
+                break;
+            default:
+                descuento = 0.5;
+        }
+    
+    //calculo precio, agrego ingreso bruto si necesario y display por document
+    precio = (lamparas * 35) * descuento;
+        
+    if(precio > 120)
+        {
+            impuesto = precio / 100 * 10;
+            precio = impuesto + precio;
+            document.getElementById("txtIdprecioDescuento").value = precio;
+            alert("IIBB Usted pago " + impuesto);
+        }
+    else
+        {
+            document.getElementById("txtIdprecioDescuento").value = precio;
+        }
+        
+}
 

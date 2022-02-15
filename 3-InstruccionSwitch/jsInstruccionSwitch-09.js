@@ -34,7 +34,7 @@ function mostrar()
 		estacion = document.getElementById("txtIdEstacion").value;
 		precio = 15000;
 
-	//defino casos para los lugares
+	//defino casos para los lugares con switch anidado
 	switch(estacion)
 	{
 		case 'Invierno':
