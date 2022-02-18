@@ -20,7 +20,7 @@ function mostrar()
 	while(contador<5)
 	{
 		//pido dato y parseo
-		numeroIngresado = prompt("Ingrese un numero.");
+		numeroIngresado = prompt("Ingrese el " + (contador + 1) + "° numero");
 		numeroIngresado = parseInt(numeroIngresado);
 
 		//suma
