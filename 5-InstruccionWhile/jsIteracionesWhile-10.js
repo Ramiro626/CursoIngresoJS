@@ -31,6 +31,7 @@ function mostrar()
 
 	//inicializo variables
 	respuesta = 'si';
+	bandera = 1;
 	sumaNeg = 0;
 	sumaPos = 0;
 	cantNeg = 0;
@@ -40,33 +41,60 @@ function mostrar()
 	promPos = 0;
 	promNeg = 0;
 	difNegPos = 0;	
+	numeroMaximo = 0;
+	numeroMinimo = 0;
 
 	//bucle
 	while(respuesta == "si")
 	{
-		//pido dato y parseo
+		//pido numero, verifico y parseo
 		numeroIngresado = prompt("Ingrese un numero");
-		numeroIngresado = parseInt(numeroIngresado);
-
-		//discrimino 0 con switch
-		switch(numeroIngresado)
+		
+		while(isNaN(numeroIngresado) == true)
 		{
-			case 0:
-				cantCeros = cantCeros + 1;
-				break;
-			default:
-				
-				//separo positivos y negativos, los sumo y cuento
-				if(numeroIngresado>0)
-				{
-					sumaPos = sumaPos + numeroIngresado;
-					cantPos = cantPos + 1;
-				}
-				else if (numeroIngresado<0)
-				{
-					sumaNeg = sumaNeg + numeroIngresado;
-					cantNeg = cantNeg + 1;
-				}
+			numeroIngresado = prompt("Error, ese no es un numero!")
+		}
+		numeroIngresado = parseInt(numeroIngresado);
+		
+		//bandera maximo y minomo
+		if (bandera == 1)
+		{
+			numeroMaximo = numeroIngresado;
+			numeroMinimo = numeroIngresado;
+			bandera = 0;
+		}
+		
+		//discrimino entre maximo y minimo con if
+		else if (numeroIngresado<numeroMinimo)
+		{
+			numeroMinimo = numeroIngresado;
+		}
+		else if (numeroIngresado>numeroMaximo)
+		{
+			numeroMaximo = numeroIngresado;
+		}
+
+		// while para diferenciar positivos
+		while(numeroIngresado>0 && respuesta == "si")
+		{
+			sumaPos = sumaPos + numeroIngresado;
+			cantPos = cantPos + 1;
+			respuesta = "no";
+		}
+		
+		// while para diferenciar negativos
+		while(numeroIngresado<0 && respuesta == "si")
+		{
+			sumaNeg = sumaNeg + numeroIngresado;
+			cantNeg = cantNeg + 1;
+			respuesta = "no";
+		}
+
+		// while para diferenciar ceros
+		while(numeroIngresado == 0 && respuesta == "si")
+		{
+			cantCeros = cantCeros + 1;
+			respuesta = "no";
 		}
 
 		//verifico si es par y lo cuento
@@ -75,12 +103,6 @@ function mostrar()
 			cantPares = cantPares + 1;
 		}
 
-		//promedio de positivos y negativos
-		promPos = sumaPos / cantPos;
-		promNeg = sumaNeg / cantNeg;
-
-		//diferencia entre positivos y negativos
-		difNegPos = sumaPos + sumaNeg;
 
 		//pido confirmacion
 		respuesta = prompt("Quiere continuar? (si o no)");
@@ -93,15 +115,31 @@ function mostrar()
 		}
 	}
 
+	//promedio de positivos
+	if (cantPos>0)
+	{
+	promPos = (sumaPos / cantPos);
+	}
+
+	//promedio de negativos
+	if (cantNeg>0)
+	{
+	promNeg = (sumaNeg / cantNeg);
+	}
+
+	//diferencia entre positivos y negativos
+	difNegPos = sumaPos + sumaNeg;
+
 	//display por document write
-	document.write("Suma de los negativos " + sumNeg + "<br>"); 
-	document.write("Suma de los positivos " + sumPos + "<br>"); 
+	document.write("Suma de los negativos " + sumaNeg + "<br>"); 
+	document.write("Suma de los positivos " + sumaPos + "<br>"); 
 	document.write("Cantidad de positivos " + cantPos + "<br>");
 	document.write("Cantidad de negativos " + cantNeg + "<br>");
 	document.write("Cantidad de ceros " + cantCeros + "<br>");
 	document.write("Cantidad de números pares " + cantPares + "<br>");
-	document.write("Promedio de positivos " + PromPos + "<br>");
-	document.write("Promedio de negativos " + PromNeg + "<br>");
+	document.write("Promedio de positivos " + promPos + "<br>");
+	document.write("Promedio de negativos " + promNeg + "<br>");
 	document.write("Diferencia entre positivos y negativos " + difNegPos + "<br>");
-
+	document.write("Numero Maximo " + numeroMaximo + "<br>");
+	document.write("Numero Minimo " + numeroMinimo + "<br>");
 }//FIN DE LA FUNCIÓN
